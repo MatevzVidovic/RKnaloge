@@ -1,0 +1,21 @@
+keytool -genkey -alias Ajshilprivate -keystore Ajshil.private -storetype JKS -keyalg rsa -dname "CN=Ajshil" -storepass 5318008 -keypass 5318008 -validity 365
+keytool -genkey -alias Sofoklejprivate -keystore Sofoklej.private -storetype JKS -keyalg rsa -dname "CN=Sofoklej" -storepass 5318008 -keypass 5318008 -validity 365
+keytool -genkey -alias Evripidprivate -keystore Evripid.private -storetype JKS -keyalg rsa -dname "CN=Evripid" -storepass 5318008 -keypass 5318008 -validity 365
+
+keytool -genkey -alias serverprivate -keystore server.private -storetype JKS -keyalg rsa -dname "CN=localhost" -storepass 5318008 -keypass 5318008 -validity 365
+
+
+
+keytool -export -alias Ajshilprivate -keystore Ajshil.private -file deleteThisManJustDeleteItAlreadyManJustComeOnAjshil.key -storepass 5318008
+keytool -import -noprompt -alias Ajshilpublic -keystore clients.public -file deleteThisManJustDeleteItAlreadyManJustComeOnAjshil.key -storepass 5318008
+
+keytool -export -alias Sofoklejprivate -keystore Sofoklej.private -file deleteThisManJustDeleteItAlreadyManJustComeOnSofoklej.key -storepass 5318008
+keytool -import -noprompt -alias Sofoklejpublic -keystore clients.public -file deleteThisManJustDeleteItAlreadyManJustComeOnSofoklej.key -storepass 5318008
+
+keytool -export -alias Evripidprivate -keystore Evripid.private -file deleteThisManJustDeleteItAlreadyManJustComeOnEvripid.key -storepass 5318008
+keytool -import -noprompt -alias Evripidpublic -keystore clients.public -file deleteThisManJustDeleteItAlreadyManJustComeOnEvripid.key -storepass 5318008
+
+
+
+keytool -export -alias serverprivate -keystore server.private -file deleteThisManJustDeleteItAlreadyManJustComeOnServer.key -storepass 5318008
+keytool -import -noprompt -alias serverpublic -keystore server.public -file deleteThisManJustDeleteItAlreadyManJustComeOnServer.key -storepass 5318008
